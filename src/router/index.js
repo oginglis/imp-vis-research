@@ -23,6 +23,11 @@ const routes = [
     name: 'ThreeResearch',
     component: () => import(/* webpackChunkName: "about" */ '../views/ThreeResearch.vue'),
   },
+  {
+    path: '/CanvasResearch',
+    name: 'CanvasResearch',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CanvasResearch.vue'),
+  },
 ];
 
 const router = new VueRouter({
