@@ -1,18 +1,30 @@
 <template>
   <div class="about">
-    <h1>This is graph page page</h1>
-    <ChartOne />
+    <Plotly :data="data" :layout="layout" :display-mode-bar="false"></Plotly>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ChartOne from '@/components/ChartOne.vue';
+
+import { Plotly } from 'vue-plotly';
 
 export default {
   name: 'Graph Research',
   components: {
-    ChartOne,
+    Plotly,
+  },
+  data() {
+    return {
+      data: [{
+        x: [1, 2, 3, 4],
+        y: [10, 15, 13, 17],
+        type: 'scatter',
+      }],
+      layout: {
+        title: 'Graph One',
+      },
+    };
   },
 };
 </script>
