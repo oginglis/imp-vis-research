@@ -1,5 +1,23 @@
 <template>
   <div class="about">
-    <h1>This is canvas research page</h1>
+    <Canvas/>
   </div>
 </template>
+
+<script>
+import Canvas from '@/components/Canvas.vue';
+
+export default {
+  name: 'Home',
+  components: {
+    Canvas,
+  },
+};
+</script>
+
+<style scoped>
+
+.logo {
+  width: 20vw;
+}
+</style>

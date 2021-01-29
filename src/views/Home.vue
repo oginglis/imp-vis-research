@@ -20,6 +20,6 @@ export default {
 <style scoped>
 
 .logo {
-  width: 20vw;
+  width: 10vw;
 }
 </style>
