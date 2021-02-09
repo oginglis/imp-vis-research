@@ -1,28 +1,33 @@
 <template>
-  <div id="canvas"></div>
+  <div id="canvas3"></div>
 </template>
 
 <script>
 import P5 from 'p5';
+import image from '@/assets/pisa.png';
 
 export default {
-  name: 'Canvas',
+  name: 'Canvas3',
   props: {
-    onOff: Boolean,
+    posX: Number,
+    posY: Number,
   },
   data() {
     return {
-
-      p5canvas: {
-      },
+      onOff: false,
+      image,
     };
   },
   mounted() {
-    const sketch = (p5) => {
+    const sketch3 = (p5) => {
       // These are your typical setup() and draw() methods
       /* eslint-disable no-param-reassign */
-      let cnv;
-      const toggleVibrate = () => {
+      let cnv2;
+
+      p5.preload = () => {
+        this.img = p5.loadImage(this.image);
+      };
+      const toggleVibrate2 = () => {
         if (this.onOff === true) {
           this.onOff = false;
         } else {
@@ -30,15 +35,20 @@ export default {
         }
       };
       p5.setup = () => {
-        cnv = p5.createCanvas(800, 400);
+        cnv2 = p5.createCanvas(800, 400);
         this.onOff = false;
-        cnv.mouseClicked(toggleVibrate);
+        cnv2.mouseClicked(toggleVibrate2);
+        p5.slider = p5.createSlider(0, 255, 0, p5.sin());
+        p5.slider.position(10, 10, 'initial');
+        p5.slider.style('width', '80px');
+        p5.image(this.img, 500, 5000);
       };
 
       p5.draw = () => {
         p5.background(200);
+        const millisecond = p5.millis();
         if (this.onOff === true) {
-          p5.translate(p5.random(-5, 5), p5.random(-5, 5));
+          p5.translate(p5.slider.value() * p5.sin(millisecond), 0);
         }
         const c = p5.color(255, 204, 0);
         p5.fill(c);
@@ -54,7 +64,7 @@ export default {
 
     // Attach the canvas to the div
     /* eslint-disable no-new */
-    new P5(sketch, 'canvas');
+    new P5(sketch3, 'canvas3');
   },
 };
 </script>

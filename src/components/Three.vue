@@ -1,3 +1,6 @@
+/* eslint-disable max-len */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-param-reassign */
 <template>
     <div id="container">
 
@@ -51,7 +54,7 @@ export default {
     init() {
       const container = document.getElementById('container');
       this.container = container;
-      this.camera = new Three.PerspectiveCamera(70, container.clientWidth / container.clientHeight, 0.25, 20);
+      this.camera = new Three.PerspectiveCamera(70,container.clientWidth / container.clientHeight, 0.25, 20);
       this.camera.position.set(0, 0, 1);
       this.scene = new Three.Scene();
       const sceneObj = this.scene;
@@ -107,6 +110,7 @@ export default {
         // called when the resource is loaded
         (gltf) => {
           gltf.scene.scale.set(0.3, 0.3, 0.3);
+          // eslint-disable-next-line no-param-reassign
           gltf.scene.position.x = 0.2;
           const text = document.createElement('div');
           text.className = 'label';
@@ -143,6 +147,7 @@ export default {
         // called when the resource is loaded
         (gltf) => {
           gltf.scene.scale.set(0.3, 0.3, 0.3);
+          // eslint-disable-next-line no-param-reassign
           gltf.scene.position.x = 0.2;
           sceneObj.add(gltf.scene);
           self.screen = gltf.scene;
@@ -165,6 +170,7 @@ export default {
         // called when the resource is loaded
         (gltf) => {
           gltf.scene.scale.set(0.3, 0.3, 0.3);
+          // eslint-disable-next-line no-param-reassign
           gltf.scene.position.x = 0.2;
           sceneObj.add(gltf.scene);
           self.top = gltf.scene;
@@ -187,6 +193,7 @@ export default {
         // called when the resource is loaded
         (gltf) => {
           gltf.scene.scale.set(0.3, 0.3, 0.3);
+          // eslint-disable-next-line no-param-reassign
           gltf.scene.position.x = 0.2;
           sceneObj.add(gltf.scene);
           self.right = gltf.scene;
@@ -209,12 +216,14 @@ export default {
         // called when the resource is loaded
         (gltf) => {
           gltf.scene.scale.set(0.3, 0.3, 0.3);
+          // eslint-disable-next-line no-param-reassign
           gltf.scene.position.x = 0.2;
           sceneObj.add(gltf.scene);
           self.left = gltf.scene;
         },
         // called while loading is progressing
         (xhr) => {
+          // eslint-disable-next-line no-mixed-operators
           console.log(`${xhr.loaded / xhr.total * 100}% loaded`);
         },
         // called when loading has errors
@@ -231,12 +240,14 @@ export default {
         // called when the resource is loaded
         (gltf) => {
           gltf.scene.scale.set(0.3, 0.3, 0.3);
+          // eslint-disable-next-line no-param-reassign
           gltf.scene.position.x = 0.2;
           sceneObj.add(gltf.scene);
           self.back = gltf.scene;
         },
         // called while loading is progressing
         (xhr) => {
+          // eslint-disable-next-line no-mixed-operators
           console.log(`${xhr.loaded / xhr.total * 100}% loaded`);
         },
         // called when loading has errors
@@ -253,12 +264,14 @@ export default {
         // called when the resource is loaded
         (gltf) => {
           gltf.scene.scale.set(0.3, 0.3, 0.3);
+          // eslint-disable-next-line no-param-reassign
           gltf.scene.position.x = 0.2;
           sceneObj.add(gltf.scene);
           self.bottom = gltf.scene;
         },
         // called while loading is progressing
         (xhr) => {
+          // eslint-disable-next-line no-mixed-operators
           console.log(`${xhr.loaded / xhr.total * 100}% loaded`);
         },
         // called when loading has errors
@@ -288,7 +301,7 @@ export default {
   },
   watch: {
     exploded(newVal) { // watch it
-      if (newVal == true) {
+      if (newVal === true) {
         console.log(this.top);
         this.top.position.y = 0.2;
         this.right.position.x = 0.4;
@@ -299,9 +312,10 @@ export default {
         // Reveal all labels
         const allLabels3 = [...document.querySelectorAll('.label')];
         allLabels3.forEach((label) => {
+          // eslint-disable-next-line no-param-reassign
           label.style.opacity = '1';
         });
-      } else if (newVal == false) {
+      } else if (newVal === false) {
         this.top.position.y = 0;
         this.top.position.y = 0;
         this.right.position.x = 0.2;
@@ -311,14 +325,15 @@ export default {
 
         const allLabels4 = [...document.querySelectorAll('.label')];
         allLabels4.forEach((label) => {
+          // eslint-disable-next-line no-param-reassign
           label.style.opacity = '0';
         });
       }
     },
     simulating(newVal) { // watch it
-      if (newVal == true) {
+      if (newVal === true) {
         // Re-Assemble Geo
-        if (this.exploded == false) {
+        if (this.exploded === false) {
           this.top.position.y = -0.5;
           this.back.position.y = -0.5;
           this.right.position.y = -0.5;
@@ -358,10 +373,11 @@ export default {
           // Hide all Labels
           const allLabels = [...document.querySelectorAll('.label')];
           allLabels.forEach((label) => {
+            // eslint-disable-next-line no-param-reassign
             label.style.opacity = '0';
           });
         }
-      } else if (newVal == false) {
+      } else if (newVal === false) {
         this.screen.scale.set(0.3, 0.3, 0.3);
         this.front.scale.set(0.3, 0.3, 0.3);
         this.back.scale.set(0.3, 0.3, 0.3);
@@ -410,6 +426,7 @@ export default {
         // Reveal all Labels
         const allLabels2 = [...document.querySelectorAll('.label')];
         allLabels2.forEach((label) => {
+          // eslint-disable-next-line no-param-reassign
           label.style.opacity = '0';
         });
       }

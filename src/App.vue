@@ -1,16 +1,17 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Lottie Animations</router-link> |
+      <router-link to="/CanvasResearch">Canvas Research</router-link> |
       <router-link to="/GraphResearch">Plotly Research</router-link> |
       <router-link to="/ThreeResearch">Three Research</router-link> |
-      <router-link to="/CanvasResearch">Canvas Research</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <script>
+
 </script>
 
 <style>
