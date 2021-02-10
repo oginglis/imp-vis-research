@@ -1,13 +1,13 @@
 <template>
   <div class="about">
     <Plotly :data="data5" :layout="layout5" :display-mode-bar="false"></Plotly>
+    <Plotly class="last" :data="data6" :layout="layout6" :display-mode-bar="false"></Plotly>
     <Plotly :data="data1" :layout="layout1" :display-mode-bar="false"></Plotly>
     <input type="range" min="0" max="100" step="1"  >
     <input type="number" v-model="value"/>
     <Plotly :data="data2" :layout="layout2" :display-mode-bar="false"></Plotly>
     <input type="range" min="0" max="100" step="1"  >
     <input type="number" v-model="value"/>
-    <Plotly class="last" :data="data6" :layout="layout6" :display-mode-bar="false"></Plotly>
   </div>
 </template>
 
@@ -60,6 +60,13 @@ export default {
       colorscale: ribbon.data[0].colorscale,
       type: 'surface',
       showscale: false,
+      transition: {
+        duration: 500,
+        easing: 'cubic-in-out'
+      },
+      frame: {
+        duration: 500
+      },
     };
     const trace2 = {
       x: ribbon.data[1].x,
@@ -69,6 +76,13 @@ export default {
       colorscale: ribbon.data[1].colorscale,
       type: 'surface',
       showscale: false,
+      transition: {
+        duration: 500,
+        easing: 'cubic-in-out'
+      },
+      frame: {
+        duration: 500
+      },
     };
     const trace3 = {
       x: ribbon.data[2].x,
@@ -77,6 +91,13 @@ export default {
       colorscale: ribbon.data[2].colorscale,
       type: 'surface',
       showscale: false,
+      transition: {
+        duration: 500,
+        easing: 'cubic-in-out'
+      },
+      frame: {
+        duration: 500
+      },
     };
     const trace4 = {
       x: ribbon.data[3].x,
@@ -85,6 +106,13 @@ export default {
       colorscale: ribbon.data[3].colorscale,
       type: 'surface',
       showscale: false,
+      transition: {
+        duration: 500,
+        easing: 'cubic-in-out'
+      },
+      frame: {
+        duration: 500
+      },
     };
     const trace5 = {
       x: ribbon.data[4].x,
@@ -93,6 +121,13 @@ export default {
       colorscale: ribbon.data[4].colorscale,
       type: 'surface',
       showscale: false,
+      transition: {
+        duration: 500,
+        easing: 'cubic-in-out'
+      },
+      frame: {
+        duration: 500
+      },
     };
     const trace6 = {
       x: ribbon.data[5].x,
@@ -101,6 +136,13 @@ export default {
       colorscale: ribbon.data[5].colorscale,
       type: 'surface',
       showscale: false,
+      transition: {
+        duration: 500,
+        easing: 'cubic-in-out'
+      },
+      frame: {
+        duration: 500
+      },
     };
     const trace7 = {
       x: ribbon.data[6].x,
@@ -110,6 +152,13 @@ export default {
       colorscale: ribbon.data[6].colorscale,
       type: 'surface',
       showscale: false,
+      transition: {
+        duration: 500,
+        easing: 'cubic-in-out'
+      },
+      frame: {
+        duration: 500
+      },
     };
     this.data5 = [trace1, trace2, trace3, trace4, trace5, trace6, trace7];
     this.layout5 = {
@@ -137,6 +186,13 @@ export default {
       }],
       layout1: {
         title: 'Ollie Simple Graph One',
+        transition: {
+          duration: 500,
+          easing: 'cubic-in-out'
+        },
+        frame: {
+          duration: 500
+        },
       },
       data2: [{
         x: [1, 2, 3, 4],
@@ -145,14 +201,29 @@ export default {
       }],
       layout2: {
         title: 'Ollie Simple Graph Two',
+        transition: {
+          duration: 500,
+          easing: 'cubic-in-out'
+        },
+        frame: {
+          duration: 500
+        },
       },
       data3: [{
         x: [1, 2, 3, 4],
         y: [10, 15, 13, 17],
         type: 'pie',
+
       }],
       layout3: {
         title: 'Graph Three',
+        transition: {
+          duration: 500,
+          easing: 'cubic-in-out'
+        },
+        frame: {
+          duration: 500
+        },
       },
       data4: [{
         x: [1, 2, 3, 4],
@@ -161,6 +232,13 @@ export default {
       }],
       layout4: {
         title: 'Graph Four',
+        transition: {
+          duration: 500,
+          easing: 'cubic-in-out'
+        },
+        frame: {
+          duration: 500
+        },
       },
     };
   },

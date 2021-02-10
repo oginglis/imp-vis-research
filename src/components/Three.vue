@@ -438,7 +438,7 @@ export default {
 
 <style scoped>
  #container{
-   height: 100vh;
+   height: 70vh;
  }
   .explode-check {
     position: absolute;

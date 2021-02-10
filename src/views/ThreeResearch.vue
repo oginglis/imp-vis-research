@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>Three JS JavaScript Library has been added to this page</h1>
+
     <ThreeTest />
   </div>
 </template>
