@@ -4,7 +4,8 @@
       <router-link to="/">Lottie Animations</router-link> |
       <router-link to="/CanvasResearch">Canvas Research</router-link> |
       <router-link to="/GraphResearch">Plotly Research</router-link> |
-      <router-link to="/ThreeResearch">Three Research</router-link> |
+      <router-link to="/ThreeGraph">Three Graph</router-link> |
+      <router-link to="/ThreeResearch">Three UI</router-link> |
     </div>
     <router-view/>
   </div>

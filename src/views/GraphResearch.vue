@@ -1,7 +1,11 @@
 <template>
   <div class="about">
-    <Plotly :data="data5" :layout="layout5" :display-mode-bar="false"></Plotly>
-    <Plotly class="last" :data="data6" :layout="layout6" :display-mode-bar="false"></Plotly>
+    <p>These graphs can be linked to animations and visualisations through JavaScript. More work needed.</p>
+    <div class="wrappergraph">
+      <Plotly :data="data5" :layout="layout5" :display-mode-bar="false"></Plotly>
+      <Plotly class="last" :data="data6" :layout="layout6" :display-mode-bar="false"></Plotly>
+    </div>
+
     <Plotly :data="data1" :layout="layout1" :display-mode-bar="false"></Plotly>
     <input type="range" min="0" max="100" step="1"  >
     <input type="number" v-model="value"/>
@@ -164,8 +168,8 @@ export default {
     this.layout5 = {
       title: 'Ollie 3D Chart Example',
       showlegend: false,
-      width: 800,
-      height: 800,
+      width: 600,
+      height: 600,
       scene: {
         xaxis: { title: 'Transformation Team' },
         yaxis: { title: 'Ollie' },
@@ -177,7 +181,11 @@ export default {
     return {
       data6: [],
       data5: [],
-      layout5: {},
+      layout6: {
+        width: 600,
+      height: 600,
+      title: 'Ollie 3D Graph 2',
+      },
       value: 50,
       data1: [{
         x: [1, 2, 3, 4],
@@ -249,5 +257,11 @@ export default {
 .last {
   width: 100vw;
   height: 800px;
+}
+
+.wrappergraph {
+  width: 100%;
+
+  display: flex;
 }
 </style>

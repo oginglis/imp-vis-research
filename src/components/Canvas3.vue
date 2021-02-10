@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      onOff: false,
+      onOff: true,
       image,
     };
   },
@@ -36,7 +36,7 @@ export default {
       };
       p5.setup = () => {
         cnv2 = p5.createCanvas(800, 400);
-        this.onOff = false;
+        this.onOff = true;
         cnv2.mouseClicked(toggleVibrate2);
         p5.slider = p5.createSlider(0, 255, 0, p5.sin());
         p5.slider.position(10, 10, 'initial');
