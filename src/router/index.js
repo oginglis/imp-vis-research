@@ -33,6 +33,11 @@ const routes = [
     name: 'CanvasResearch',
     component: () => import(/* webpackChunkName: "about" */ '../views/CanvasResearch.vue'),
   },
+  {
+    path: '/ThreeEngine',
+    name: 'ThreeEngine',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ThreeNue.vue'),
+  },
 ];
 
 const router = new VueRouter({

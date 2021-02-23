@@ -4,8 +4,9 @@
       <router-link to="/">Lottie Animations</router-link> |
       <router-link to="/CanvasResearch">Canvas Research</router-link> |
       <router-link to="/GraphResearch">Plotly Research</router-link> |
-      <router-link to="/ThreeGraph">Three Graph</router-link> |
-      <router-link to="/ThreeResearch">Three UI</router-link> |
+      <router-link to="/ThreeGraph">3D Axis Plot</router-link> |
+      <router-link to="/ThreeResearch">3D Air Con</router-link> |
+      <router-link to="/ThreeEngine">3D Engine</router-link> |
     </div>
     <router-view/>
   </div>

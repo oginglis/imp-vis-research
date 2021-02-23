@@ -139,7 +139,41 @@ export default {
           console.log(`An error happened ${error}`);
         },
       );
+      loader.load(
+        // resource URL
+        './sphereonly.gltf',
+        // called when the resource is loaded
+        (gltf) => {
+          gltf.scene.scale.set(0.3, 0.3, 0.3);
+          // eslint-disable-next-line no-param-reassign
+          gltf.scene.position.x = 0.2;
+          const text = document.createElement('div');
+          text.className = 'label';
+          text.style.color = 'rgb(220,220,220)';
+          text.style.fontFamily = 'Avenir';
+          text.style.backgroundColor = 'rgb(255, 153, 51';
+          text.textContent = 'Click for more information';
+          text.style.borderRadius = '0';
+          text.style.padding = '10px';
+          text.style.opacity = '0';
 
+          self.frontLabel = new CSS2DObject(text);
+          self.frontLabel.position.z = 0.17;
+          self.frontLabel.position.x = 0.1;
+          sceneObj.add(gltf.scene);
+          sceneObj.add(self.frontLabel);
+          self.front = gltf.scene;
+        },
+        // called while loading is progressing
+        (xhr) => {
+          console.log(`${xhr.loaded / xhr.total * 100}% loaded`);
+        },
+        // called when loading has errors
+        (error) => {
+          console.log(error);
+          console.log(`An error happened ${error}`);
+        },
+      );
 
 
     },
